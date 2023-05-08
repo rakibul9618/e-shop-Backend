@@ -2,28 +2,33 @@
   "name": "backend-e-shop",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "type": "module",
+  "exports": "./src/server.js",
   "scripts": {
-    "start:dev": "nodemon ./src/server",
-    "lint:fix": "eslint --fix ./src/**/*.js"
+    "start:dev": "nodemon ./src/server.js",
+    "lint:fix": "eslint --fix ./src/**/*.js",
+    "check-lint": "eslint . --ext ts --ext js",
+    "check-types": "tsc --pretty  --noEmit",
+    "format": "prettier  --write .",
+    "husky": "husky install"
   },
   "keywords": [],
   "author": "Rakib",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "express-validator": "^7.0.1",
+    "mongoose": "^7.0.2",
+    "nodemon": "^2.0.21",
     "pino": "^8.11.0",
-    "pino-pretty": "^10.0.0"
+    "pino-pretty": "^10.0.0",
+    "prettier": "^2.8.4"
   },
   "devDependencies": {
     "eslint": "^8.36.0",
-    "eslint-config-standard": "^17.0.0",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-n": "^15.6.1",
-    "eslint-plugin-promise": "^6.1.1",
     "husky": "^8.0.3"
   }
 }
